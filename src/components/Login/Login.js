@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import Home from "../home/Home";
-import Registration from "../Registration/Registration";
 
 
 
@@ -9,7 +8,6 @@ function Login() {
     const [emaillog, setEmaillog] = useState(" ");
     const [passwordlog, setPasswordlog] = useState(" ");
     const [flag, setFlag] = useState(false);
-    const [registration, setRegistration] = useState(true);
     const [home, setHome] = useState(true);
 
   function handleLogin(e) {
@@ -22,7 +20,7 @@ function Login() {
     if (!emaillog || !passwordlog) {
       setFlag(true);
         console.log("EMPTY");
-        setRegistration(!registration);
+        
     } else if (passwordlog !== pass || emaillog !== mail) {
       setFlag(true);
     } else {
@@ -31,9 +29,7 @@ function Login() {
     }
     }
     
-    function handleClick() {
-      setRegistration(!registration);
-    }
+   
 
   return React.createElement(
     "div",
@@ -79,21 +75,7 @@ function Login() {
             },
             "Login"
           ),
-          React.createElement(
-            "p",
-            {
-              className: "forgot-password text-right",
-            },
-            "Not registered ?",
-            React.createElement(
-              "a",
-              {
-                href: "#",
-                onClick: handleClick,
-              },
-              "Signup"
-            )
-          ),
+          
           flag &&
             React.createElement(
               Alert,
