@@ -7,7 +7,7 @@ body {
   display: flex;
   font-weight: 400;
   font-family: sans-serif;
-  background: #12c2e900;  /* fallback for old browsers */
+  background: #ffffff00;  /* fallback for old browsers */
 }
 
 body, html, .App, #root, .outer {

@@ -2,34 +2,27 @@ import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import Home from "../home/Home";
 
-
-
 function Login() {
-    const [emaillog, setEmaillog] = useState(" ");
-    const [passwordlog, setPasswordlog] = useState(" ");
-    const [flag, setFlag] = useState(false);
-    const [home, setHome] = useState(true);
+  const [emaillog, setEmaillog] = useState(" ");
+  const [passwordlog, setPasswordlog] = useState(" ");
+  const [flag, setFlag] = useState(false);
+  const [home, setHome] = useState(true);
 
   function handleLogin(e) {
     e.preventDefault();
     let pass = localStorage.getItem("SubmissionPassword").replace(/"/g, "");
     let mail = localStorage.getItem("SubmissionEmail").replace(/"/g, ""); // .replace(/"/g,"") is used to remove the double quotes for the string
 
-      
-      
     if (!emaillog || !passwordlog) {
       setFlag(true);
-        console.log("EMPTY");
-        
+      console.log("EMPTY");
     } else if (passwordlog !== pass || emaillog !== mail) {
       setFlag(true);
     } else {
       setHome(!home);
       setFlag(false);
     }
-    }
-    
-   
+  }
 
   return React.createElement(
     "div",
@@ -75,7 +68,7 @@ function Login() {
             },
             "Login"
           ),
-          
+
           flag &&
             React.createElement(
               Alert,

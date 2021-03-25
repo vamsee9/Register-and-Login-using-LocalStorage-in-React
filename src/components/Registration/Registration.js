@@ -20,11 +20,12 @@ function Registration() {
       setFlag(false);
       localStorage.setItem("SubmissionEmail", JSON.stringify(email));
       localStorage.setItem("SubmissionPassword", JSON.stringify(password));
+      localStorage.setItem("name", JSON.stringify(name));
       console.log("Saved in Local Storage");
       setLogin(!login);
     }
     }
-    
+
   // Directly to the login page
   function handleClick() {
     setLogin(!login);
@@ -55,7 +56,7 @@ function Registration() {
                   },
                   React.createElement("label", null, "Name"),
                   React.createElement("input", {
-                    type: "text",
+                    type: "name",
                     className: "form-control",
                     placeholder: "Enter Full Name",
                     name: "name",
